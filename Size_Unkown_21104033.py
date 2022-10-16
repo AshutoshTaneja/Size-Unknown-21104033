@@ -35,10 +35,6 @@ def binarySearchUnknownLength(start, array, find):
       # instead of giving the error the following code will be excecuted
     except IndexError:
 
-      # the front to the last place end was at and the loop continues again on the sub-array whose starting index is front
-      front += int(end/2) - 1
-      end = 1
-
       # exception handling incase the element does not exist in the array
       try:
         if array[front+1]:
@@ -50,6 +46,11 @@ def binarySearchUnknownLength(start, array, find):
         end = -1
         print("The element required does not exist in the array.")
         break
+
+      # the front to the last place end was at and the loop continues again on the sub-array whose starting index is front
+      front += int(end/2) - 1
+      end = 1
+
 
   print(f"The required number {find} is at {front + end}th position in the array.")
 
